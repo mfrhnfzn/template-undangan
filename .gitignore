@@ -1,0 +1,7 @@
+# System & editor
+.DS_Store
+Thumbs.db
+*.log
+
+# OS junk
+desktop.ini
