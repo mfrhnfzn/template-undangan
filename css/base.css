@@ -53,6 +53,10 @@ code {
   padding: 1px 5px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -83,10 +87,23 @@ code {
 .preview-text {
   white-space: pre-wrap;
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 640px) {
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 32px 16px 48px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-description {
+    font-size: 14px;
   }
 }

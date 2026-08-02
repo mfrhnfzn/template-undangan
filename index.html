@@ -29,13 +29,26 @@
           <div class="form-grid">
             <div class="field">
               <label class="label" for="template">Teks Template</label>
-              <textarea
-                class="textarea"
-                id="template"
-                rows="8"
-                placeholder="Tulis teks undangan di sini. Contoh:&#10;Kepada $penerima, kami mengundang Anda..."
-              ></textarea>
-              <p class="hint" id="template-hint">
+              <textarea class="textarea" id="template" rows="10">Assalamu'alaikum Wr. Wb
+Bismillahirahmanirrahim. Tanpa mengurangi rasa hormat, perkenankan kami mengundang Kepada Yth. $penerima untuk menghadiri acara pernikahan kami :
+
+Faza Agil Sulsyansyah, S.T &amp; Jiehan Ayu Fahnie, S.Ak
+
+ *Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :*
+💌 https://willooos.my.canva.site/wedding-of-faza-jiehan
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu. 
+
+*Mohon maaf perihal undangan hanya kami sampaikan melalui pesan singkat ini dikarenakan keterbatasan waktu dan jarak.* 
+
+Terima kasih banyak atas perhatiannya. 
+Wassalamu'alaikum Wr. Wb. 
+
+Terima Kasih.
+
+Hormat kami,
+Faza &amp; Jiehan</textarea>
+              <p class="hint">
                 Gunakan <code>$penerima</code> sebagai pengganti nama.
               </p>
             </div>
@@ -47,9 +60,12 @@
                 id="recipient"
                 type="text"
                 placeholder="Ketik nama di sini..."
+                autocomplete="off"
+                spellcheck="false"
               />
+              <div class="suggest" id="suggest-box" hidden></div>
               <p class="hint">
-                Hasil di bawah akan otomatis ter-update saat kamu mengetik.
+                Ketik <code>&amp;</code> untuk saran (Partner / Istri / Suami).
               </p>
             </div>
           </div>
@@ -63,6 +79,9 @@
             </button>
           </div>
           <div class="preview-body">
+            <p class="preview-warning" id="preview-warning" hidden>
+              Wajib isi nama penerima terlebih dahulu sebelum teks bisa disalin.
+            </p>
             <p class="preview-text" id="preview"></p>
           </div>
         </section>

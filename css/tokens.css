@@ -21,6 +21,9 @@
   --kumo-success: #16a34a;
   --kumo-success-tint: rgba(22, 163, 74, 0.12);
 
+  --kumo-warning: #b45309;
+  --kumo-warning-tint: rgba(245, 158, 11, 0.15);
+
   --kumo-shadow-edge: rgba(0, 0, 0, 0.12);
   --kumo-shadow-drop: rgba(0, 0, 0, 0.08);
 
