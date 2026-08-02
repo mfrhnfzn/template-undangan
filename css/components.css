@@ -14,9 +14,13 @@
 }
 
 .field {
-  position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+}
+
+.input-wrap {
+  position: relative;
   min-width: 0;
 }
 
@@ -79,7 +83,7 @@
   font-size: 13px;
   font-weight: 600;
   color: #ffffff;
-  background: var(--kumo-brand);
+  background: var(--kumo-blue);
   border: none;
   border-radius: var(--kumo-radius-md);
   padding: 8px 16px;
@@ -88,16 +92,39 @@
 }
 
 .btn:hover {
-  background: var(--kumo-brand-hover);
+  background: var(--kumo-blue-hover);
 }
 
 .btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(246, 130, 31, 0.35);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
 }
 
 .btn:active {
   transform: translateY(1px);
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+}
+
+.btn--whatsapp {
+  background: var(--kumo-whatsapp);
+}
+
+.btn--whatsapp:hover {
+  background: var(--kumo-whatsapp-hover);
+}
+
+.btn--whatsapp:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.35);
 }
 
 .btn--success {
@@ -108,15 +135,18 @@
   background: var(--kumo-success);
 }
 
-.btn:disabled {
-  background: var(--kumo-text-inactive);
+.btn:disabled,
+.btn--whatsapp:disabled {
+  color: var(--kumo-text-placeholder);
+  background: var(--kumo-tint);
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
 .suggest {
   position: absolute;
-  top: calc(100% - 24px);
+  top: calc(100% + 4px);
   left: 0;
   right: 0;
   z-index: 10;
@@ -127,6 +157,18 @@
     0 1px 0 var(--kumo-shadow-edge),
     0 4px 12px var(--kumo-shadow-drop);
   overflow: hidden;
+  animation: suggest-in 0.12s ease-out;
+}
+
+@keyframes suggest-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .suggest-item {
@@ -140,9 +182,11 @@
   border: none;
   padding: 8px 12px;
   cursor: pointer;
+  transition: background-color 0.12s ease;
 }
 
-.suggest-item:hover {
+.suggest-item:hover,
+.suggest-item.is-active {
   background: var(--kumo-tint);
 }
 
@@ -155,6 +199,25 @@
   border-radius: var(--kumo-radius-sm);
   padding: 10px 14px;
   margin-bottom: 12px;
+  animation: fade-in 0.15s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @media (max-width: 640px) {

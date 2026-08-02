@@ -12,6 +12,12 @@
   --kumo-brand: #f6821f;
   --kumo-brand-hover: #e67815;
 
+  --kumo-blue: #2563eb;
+  --kumo-blue-hover: #1d4ed8;
+
+  --kumo-whatsapp: #25d366;
+  --kumo-whatsapp-hover: #1ebe5b;
+
   --kumo-text-default: #363636;
   --kumo-text-strong: #262626;
   --kumo-text-subtle: #6e6e6e;
@@ -31,5 +37,6 @@
   --kumo-radius-md: 8px;
   --kumo-radius-lg: 10px;
 
-  --kumo-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --kumo-font: "Geist Sans", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
